@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sofia Eun-Young Guerra - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cream: #f8f6f0;
+            --off-white: #fefdfb;
+            --warm-cream: #f0ebe3;
+            --vintage-blue: #7b9eb0;
+            --deep-blue: #4a6b7c;
+            --light-blue: #a8c5d6;
+            --accent-blue: #5d8aa1;
+            --text-dark: #2c3e47;
+            --text-light: #5a6c75;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background: var(--off-white);
+            color: var(--text-dark);
+            overflow-x: hidden;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        /* Hero Section */
+        #hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            flex-direction: column;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, var(--off-white) 0%, var(--warm-cream) 100%);
+        }
+
+        .icon-grid-container {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            padding: 2rem;
+        }
+
+        .hero-text {
+            grid-column: 2 / 4;
+            grid-row: 2 / 3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            z-index: 3;
+        }
+
+        .hero-text h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.15em;
+            color: var(--deep-blue);
+            text-transform: uppercase;
+        }
+
+        .hero-text p {
+            font-family: 'Lato', sans-serif;
+            font-size: clamp(0.9rem, 1.8vw, 1.2rem);
+            color: var(--text-light);
+            font-weight: 300;
+            letter-spacing: 0.05em;
+        }
+
+        .grid-icon-link {
+            position: relative;
+            text-decoration: none;
+            display: block;
+            aspect-ratio: 1;
+            overflow: hidden;
+            background: var(--cream);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .grid-icon-link:nth-child(1) { animation-delay: 0.1s; }
+        .grid-icon-link:nth-child(2) { animation-delay: 0.2s; }
+        .grid-icon-link:nth-child(3) { animation-delay: 0.3s; }
+        .grid-icon-link:nth-child(4) { animation-delay: 0.4s; }
+        .grid-icon-link:nth-child(5) { animation-delay: 0.5s; }
+        .grid-icon-link:nth-child(7) { animation-delay: 0.6s; }
+        .grid-icon-link:nth-child(8) { animation-delay: 0.7s; }
+        .grid-icon-link:nth-child(9) { animation-delay: 0.8s; }
+        .grid-icon-link:nth-child(10) { animation-delay: 0.9s; }
+        .grid-icon-link:nth-child(11) { animation-delay: 1s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .grid-icon-link:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(75, 107, 124, 0.15);
+        }
+
+        .grid-icon {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            filter: grayscale(0.2);
+        }
+
+        .grid-icon-link:hover .grid-icon {
+            transform: scale(1.05);
+            filter: grayscale(0);
+        }
+
+        .icon-about {
+            padding: 0;
+        }
+
+        .icon-about .grid-icon {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            padding: 0;
+            margin: 0;
+            display: block;
+        }
+
+        .icon-tooltip {
+            position: absolute;
+            bottom: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--deep-blue);
+            color: var(--off-white);
+            padding: 0.4rem 1rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            z-index: 10;
+        }
+
+        .grid-icon-link:hover .icon-tooltip {
+            opacity: 1;
+            bottom: -40px;
+        }
+
+        .scroll-indicator {
+            position: relative;
+            z-index: 2;
+            margin-top: 3rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            font-weight: 400;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(10px); }
+        }
+
+        /* Project Sections */
+        .project-section {
+            min-height: 100vh;
+            padding: 6rem 5%;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .project-section:nth-child(odd) {
+            background: var(--off-white);
+        }
+
+        .project-section:nth-child(even) {
+            background: var(--warm-cream);
+        }
+
+        .project-container {
+            max-width: 1400px;
+            width: 100%;
+            margin: 0 auto;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .project-container.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Alternating layouts */
+        .layout-left {
+            display: grid;
+            grid-template-columns: 1fr 1.3fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .layout-right {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .project-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 0.9rem;
+            color: var(--vintage-blue);
+            font-weight: 400;
+            letter-spacing: 0.3em;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .project-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 600;
+            color: var(--deep-blue);
+            margin-bottom: 2rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            line-height: 1.2;
+        }
+
+        .project-description {
+            font-size: 1.05rem;
+            line-height: 1.9;
+            color: var(--text-light);
+            font-weight: 300;
+        }
+
+        /* Gallery Item Base */
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            background: transparent;
+        }
+
+        .gallery-item img,
+        .gallery-item video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Ice Tent - Left layout (5 images) */
+        .gallery-icetent {
+            display: grid;
+            grid-template-columns: 1.05fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 1.5rem;
+            height: clamp(420px, 55vh, 620px);
+        }
+
+        .gallery-icetent .item-2 {
+            grid-column: 1;
+            grid-row: 1 / 3;
+        }
+
+        .gallery-icetent .item-5 { grid-column: 2; grid-row: 1; }
+        .gallery-icetent .item-4 { grid-column: 3; grid-row: 1; }
+        .gallery-icetent .item-1 { grid-column: 2; grid-row: 2; }
+        .gallery-icetent .item-3 { grid-column: 3; grid-row: 2; }
+
+        /* Dragonfly */
+        .gallery-dragonfly {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .gallery-dragonfly .item-1 { aspect-ratio: 1144/1494; }
+        .gallery-dragonfly .item-2 { aspect-ratio: 1144/1494; }
+        .gallery-dragonfly .item-3 { aspect-ratio: 2056/1440; }
+        .gallery-dragonfly .item-4 { aspect-ratio: 2056/1440; }
+        .gallery-dragonfly .item-5 { display: none; }
+
+        /* MGH */
+        .gallery-mgh {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .gallery-mgh .item-1 {
+            grid-column: 1 / 3;
+            aspect-ratio: 1445/779;
+        }
+
+        .gallery-mgh .item-2,
+        .gallery-mgh .item-3 {
+            aspect-ratio: 1;
+        }
+
+        /* Staircase */
+        .gallery-staircase {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .gallery-staircase .gallery-item {
+            aspect-ratio: 9/16;
+        }
+
+        /* Truss */
+        .gallery-truss {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .gallery-truss .gallery-item {
+            aspect-ratio: 5/4;
+        }
+
+        /* Bookmarks */
+        .gallery-bookmarks {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .gallery-bookmarks .gallery-item {
+            aspect-ratio: 2/3;
+        }
+
+        .gallery-bookmarks .item-4 {
+            grid-column: 1 / 2;
+        }
+
+        .gallery-bookmarks .item-5 {
+            grid-column: 2 / 3;
+        }
+
+        /* Gorgons */
+        .gallery-gorgons {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .gallery-gorgons .gallery-item {
+            aspect-ratio: 4/3;
+        }
+
+        /* Willow */
+        .gallery-willow {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .gallery-willow .item-1 {
+            grid-column: 1 / 3;
+            aspect-ratio: 16/10;
+        }
+
+        .gallery-willow .item-2,
+        .gallery-willow .item-3 {
+            aspect-ratio: 1;
+        }
+
+        /* Baking */
+        .baking-container {
+            max-width: 1400px;
+            width: 100%;
+            margin: 0 auto;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .baking-container.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .baking-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .baking-gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .baking-item {
+            position: relative;
+            overflow: hidden;
+            background: transparent;
+        }
+
+        .baking-item img {
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+            display: block;
+        }
+
+        .baking-caption {
+            padding: 0.8rem 0;
+            background: transparent;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 0.85rem;
+            font-weight: 400;
+            color: var(--text-light);
+            text-align: center;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        /* About Section */
+        #about {
+            min-height: 100vh;
+            padding: 8rem 5%;
+            background: var(--vintage-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .about-container {
+            max-width: 900px;
+            background: transparent;
+            padding: 0;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .about-container.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .about-container h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-weight: 600;
+            color: var(--off-white);
+            margin-bottom: 3rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+
+        .about-text {
+            font-size: 1.15rem;
+            line-height: 2;
+            color: var(--cream);
+            margin-bottom: 3rem;
+            font-weight: 300;
+        }
+
+        .about-text p {
+            margin-bottom: 2rem;
+        }
+
+        .about-text strong {
+            color: var(--off-white);
+            font-weight: 400;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .skill-tag {
+            font-family: 'Cormorant Garamond', serif;
+            padding: 0.6rem 1.2rem;
+            background: transparent;
+            border: 1px solid var(--light-blue);
+            color: var(--off-white);
+            font-size: 0.85rem;
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            background: var(--off-white);
+            color: var(--deep-blue);
+            border-color: var(--off-white);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--deep-blue);
+            color: var(--off-white);
+            padding: 5rem 5%;
+            text-align: center;
+        }
+
+        footer h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        footer p {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: var(--light-blue);
+            font-weight: 300;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--light-blue);
+            text-decoration: none;
+            padding: 0.6rem 1.2rem;
+            border: 1px solid var(--light-blue);
+            transition: all 0.3s ease;
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+        }
+
+        .social-links a:hover {
+            background: var(--off-white);
+            color: var(--deep-blue);
+            border-color: var(--off-white);
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .icon-grid-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .hero-text {
+                grid-column: 1 / 4;
+                grid-row: 2 / 3;
+            }
+
+            .layout-left,
+            .layout-right {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .gallery-staircase,
+            .gallery-truss,
+            .gallery-bookmarks {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .gallery-bookmarks .item-4,
+            .gallery-bookmarks .item-5 {
+                grid-column: auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .icon-grid-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+                padding: 1.5rem;
+            }
+
+            .hero-text {
+                grid-column: 1 / 3;
+                grid-row: 2 / 3;
+            }
+
+            .gallery-icetent,
+            .gallery-dragonfly,
+            .gallery-mgh,
+            .gallery-staircase,
+            .gallery-truss,
+            .gallery-bookmarks,
+            .gallery-gorgons,
+            .gallery-willow {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-icetent {
+                height: auto;
+                grid-template-rows: auto;
+            }
+
+            .gallery-icetent .item-2,
+            .gallery-icetent .item-1,
+            .gallery-icetent .item-3,
+            .gallery-icetent .item-4,
+            .gallery-icetent .item-5 {
+                grid-column: 1;
+                grid-row: auto;
+            }
+
+            .gallery-icetent .item-1,
+            .gallery-dragonfly .item-5,
+            .gallery-mgh .item-1,
+            .gallery-willow .item-1 {
+                grid-column: 1;
+            }
+
+            .baking-gallery {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="icon-grid-container">
+            <a href="#project1" class="grid-icon-link">
+                <img src="images/icetent1.png" alt="Ice Tent" class="grid-icon">
+                <span class="icon-tooltip">Ice Tent</span>
+            </a>
+
+            <a href="#project2" class="grid-icon-link">
+                <img src="images/dragonfly1.png" alt="Dragonfly Lamp" class="grid-icon">
+                <span class="icon-tooltip">Dragonfly Lamp</span>
+            </a>
+
+            <a href="#project3" class="grid-icon-link">
+                <img src="images/MGH3.jpg" alt="MGH Dome" class="grid-icon">
+                <span class="icon-tooltip">MGH Dome</span>
+            </a>
+
+            <a href="#project4" class="grid-icon-link">
+                <img src="images/staircase1.png" alt="Spiral Staircase" class="grid-icon">
+                <span class="icon-tooltip">Spiral Staircase</span>
+            </a>
+
+            <a href="#project5" class="grid-icon-link">
+                <img src="images/truss1.png" alt="Ceiling Truss" class="grid-icon">
+                <span class="icon-tooltip">Ceiling Truss</span>
+            </a>
+
+            <div class="hero-text">
+                <h1>Sofia Eun-Young Guerra</h1>
+                <p>Computational Designer & Architect</p>
+            </div>
+
+            <a href="#project6" class="grid-icon-link">
+                <img src="images/bookmarks1.png" alt="Bookmarks" class="grid-icon">
+                <span class="icon-tooltip">Bookmarks</span>
+            </a>
+
+            <a href="#project7" class="grid-icon-link">
+                <img src="images/gorgon1.png" alt="The Gorgons" class="grid-icon">
+                <span class="icon-tooltip">The Gorgons</span>
+            </a>
+
+            <a href="#project8" class="grid-icon-link">
+                <img src="images/willow1.png" alt="Willow Tree" class="grid-icon">
+                <span class="icon-tooltip">Willow Tree</span>
+            </a>
+
+            <a href="#baking" class="grid-icon-link">
+                <img src="images/baking/mangocrepecake.png" alt="Baking" class="grid-icon">
+                <span class="icon-tooltip">Baking</span>
+            </a>
+
+            <a href="#about" class="grid-icon-link icon-about">
+                <img src="images/aboutme.png" alt="About Me" class="grid-icon">
+                <span class="icon-tooltip">About Me</span>
+            </a>
+        </div>
+
+        <div class="scroll-indicator">↓ Explore Projects ↓</div>
+    </section>
+
+    <!-- Project 1: Ice Tent - LEFT LAYOUT -->
+    <section id="project1" class="project-section">
+        <div class="project-container layout-left">
+            <div class="project-header">
+                <div class="project-number">Project 001</div>
+                <h2 class="project-title">Chagan Ice Fishing Tent</h2>
+                <p class="project-description">
+                    The aim of this project was to design a shelter suited for the ice fishing
+                    season of Qian Gorlos Mongol Autonomous County, Jilin Province, China.
+                    The main requirements: Chagan Lake tents needs to be environmentally friendly,
+                    easily transportable and deployable, and resistant to harsh winter cold and wind.
+                    The resulting tent consists of two polyhedra structures: an elongated
+                    square cupola body and a gyroelongated square cupola skirt. The central
+                    advantages of this design were excellent wind deflection (faceted angles break gusts),
+                    strong load distribution (ideal for snow and ice pressure), and a
+                    naturally insulating form (low surface-to-volume ratio). Developed in collaboration
+                    with Dianne Cao (MIT) and Jingtong Yan (Harvard).
+                </p>
+            </div>
+            <div class="gallery-icetent">
+                <div class="gallery-item item-1">
+                    <img src="images/icetent1.png" alt="Ice tent view 1">
+                </div>
+                <div class="gallery-item item-2">
+                    <img src="images/icetent2.png" alt="Ice tent view 2">
+                </div>
+                <div class="gallery-item item-3">
+                    <img src="images/icetent3.png" alt="Ice tent view 3">
+                </div>
+                <div class="gallery-item item-4">
+                    <img src="images/icetent4.png" alt="Ice tent view 4">
+                </div>
+                <div class="gallery-item item-5">
+                    <img src="images/icetent5.png" alt="Ice tent view 5">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project 2: Dragonfly - RIGHT LAYOUT -->
+    <section id="project2" class="project-section">
+        <div class="project-container layout-right">
+            <div class="gallery-dragonfly">
+                <div class="gallery-item item-1">
+                    <img src="images/dragonfly1.png" alt="Dragonfly lamp view 1">
+                </div>
+                <div class="gallery-item item-2">
+                    <img src="images/dragonfly2.png" alt="Dragonfly lamp view 2">
+                </div>
+                <div class="gallery-item item-3">
+                    <img src="images/dragonfly3.png" alt="Dragonfly lamp view 3">
+                </div>
+                <div class="gallery-item item-4">
+                    <img src="images/dragonfly4.png" alt="Dragonfly lamp view 4">
+                </div>
+                <div class="gallery-item item-5">
+                    <video autoplay muted loop playsinline>
+                        <source src="images/dragonfly5.mov" type="video/quicktime">
+                        <source src="images/dragonfly5.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+            <div class="project-header">
+                <div class="project-number">Project 002</div>
+                <h2 class="project-title">Dragonflight Lamp</h2>
+                <p class="project-description">
+                    This lamp was designed to bring character and dynamicism to a popular study spot
+                    on MIT campus. Inspired by the delicate intricacy and refractory properties of
+                    dragonfly wings, this lamp comprises of a number of adjustable and playful features:
+                    the angle at which the wings are bent can be adjusted, wings can be removed and switched out,
+                    colors and brightness of the lamp light can be adjusted, lamp head can be rotated 360 degrees, and the base of the
+                    lamp can be spun. Developed and fabricated in collaboration with Stasya Selizhuk (MIT).
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project 3: MGH - LEFT LAYOUT -->
+    <section id="project3" class="project-section">
+        <div class="project-container layout-left">
+            <div class="project-header">
+                <div class="project-number">Project 003</div>
+                <h2 class="project-title">Massachusetts General Hospital Ether Dome</h2>
+                <p class="project-description">
+                    This project was an exercise in primitives modeling in Rhino. Using basic polygons,
+                    polygon extrusions, solids, boolean union and difference functions, and array and symmetry functions,
+                    I modeled the MGH Ether Dome, the second best dome in the Boston-Cambridge area (we all know which
+                    building takes the gold).
+                </p>
+            </div>
+            <div class="gallery-mgh">
+                <div class="gallery-item item-1">
+                    <img src="images/MGH1.jpg" alt="MGH Dome exterior">
+                </div>
+                <div class="gallery-item item-2">
+                    <img src="images/MGH2.jpg" alt="MGH Dome detail 1">
+                </div>
+                <div class="gallery-item item-3">
+                    <img src="images/MGH3.jpg" alt="MGH Dome interior">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project 4: Staircase - RIGHT LAYOUT -->
+    <section id="project4" class="project-section">
+        <div class="project-container layout-right">
+            <div class="gallery-staircase">
+                <div class="gallery-item item-1">
+                    <img src="images/staircase1.png" alt="Spiral staircase image 1">
+                </div>
+                <div class="gallery-item item-2">
+                    <img src="images/staircase2.png" alt="Spiral staircase image 2">
+                </div>
+                <div class="gallery-item item-3">
+                    <img src="images/staircase3.png" alt="Spiral staircase image 3">
+                </div>
+                <div class="gallery-item item-4">
+                    <img src="images/staircase4.png" alt="Spiral staircase image 4">
+                </div>
+                <div class="gallery-item item-5">
+                    <img src="images/staircase5.png" alt="Spiral staircase image 5">
+                </div>
+                <div class="gallery-item item-6">
+                    <img src="images/staircase6.png" alt="Spiral staircase image 6">
+                </div>
+            </div>
+            <div class="project-header">
+                <div class="project-number">Project 004</div>
+                <h2 class="project-title">Parametric Spiral Staircase</h2>
+                <p class="project-description">
+                    A simple Rhino and Grasshopper-designed spiral staircase with a number of adjustable
+                    parameters, including staircase height, radius, resolution, number of steps, degree of
+                    rotation, railing thickness, number of railing poles, and inner stem radius.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project 5: Truss - LEFT LAYOUT -->
+    <section id="project5" class="project-section">
+        <div class="project-container layout-left">
+            <div class="project-header">
+                <div class="project-number">Project 005</div>
+                <h2 class="project-title">Parametric Ceiling Truss System</h2>
+                <p class="project-description">
+                     A ceiling truss system with a fully adjustable UV-curved nurb base. UV axes are uniquely
+                     defined for an individual surface, with adjustable and separate resolutions in both U and V
+                     directions, which are also customizable. The resulting ceiling surface base of this truss can
+                     be pulled and twisted any which way. It also includes other parametric features: number of trusses,
+                     style of truss, thickness of pipes, direction of trusses, and density of trusses.
+                </p>
+            </div>
+            <div class="gallery-truss">
+                <div class="gallery-item">
+                    <img src="images/truss1.png" alt="Ceiling truss view 1">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/truss2.png" alt="Ceiling truss view 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/truss3.png" alt="Ceiling truss view 3">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/truss4.png" alt="Ceiling truss view 4">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/truss5.png" alt="Ceiling truss view 5">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/truss6.png" alt="Ceiling truss view 6">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project 6: Bookmarks - RIGHT LAYOUT -->
+    <section id="project6" class="project-section">
+        <div class="project-container layout-right">
+            <div class="gallery-bookmarks">
+                <div class="gallery-item item-1">
+                    <img src="images/bookmarks1.png" alt="Metal bookmarks 1">
+                </div>
+                <div class="gallery-item item-2">
+                    <img src="images/bookmarks2.png" alt="Metal bookmarks 2">
+                </div>
+                <div class="gallery-item item-3">
+                    <img src="images/bookmarks3.png" alt="Metal bookmarks 3">
+                </div>
+                <div class="gallery-item item-4">
+                    <img src="images/bookmarks4.png" alt="Metal bookmarks 4">
+                </div>
+                <div class="gallery-item item-5">
+                    <img src="images/bookmarks5.png" alt="Metal bookmarks 5">
+                </div>
+                <div class="gallery-item item-6">
+                    <img src="images/bookmarks6.png" alt="Metal bookmarks 5">
+                </div>
+            </div>
+            <div class="project-header">
+                <div class="project-number">Project 006</div>
+                <h2 class="project-title">Metal Bookmarks</h2>
+                <p class="project-description">
+                    I am an avid reader (check out my StoryGraph @eunyounga). Paper bookmarks have always felt lacking
+                    in pizzazz for me, however. So I designed this set of steel, laser-cut bookmarks. Three of these bookmarks
+                    were hand-drawn in Illustrator, then prepared for laser cutting in Rhino. The other three, the patterned
+                    bookmarks, were created using a Python plug-in into Rhino, and are parametric and can be adjusted in terms of
+                    size, thickness, stretch, and more.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project 7: Gorgons - LEFT LAYOUT -->
+    <section id="project7" class="project-section">
+        <div class="project-container layout-left">
+            <div class="project-header">
+                <div class="project-number">Project 007</div>
+                <h2 class="project-title">The Gorgons</h2>
+                <p class="project-description">
+                    Tasked with the lofty mission of filling one of MIT's major event spaces, Lobby 13,
+                    with an installation that lived and breathed, my team and I designed, fabricated, and displayed
+                    an inflatable piece of massive proportions. Inspired by the myth of the Gorgons of Greek mythology,
+                    three sisters with snakes for hair, we decided to create a fantastical monster to invade the empty, sterile
+                    Lobby 13. This manifested as a set of serpentine, branching inflatables, each approximately 150 feet in length
+                    with arms spanning 8 to 12 feet, that encircled the pillars of Lobby 13, wrapping themselves around
+                    the stone when blown up. We designed the branches to be an interactive element with which the audience
+                    could engage by holding, wrapping, touching, and otherwise manipulating. We also included a number of free floating "eyes," clear balloons with miniature
+                    LED lights inside with helium content carefully calculated such that the balloons would freely bob
+                    without sinking to the floor nor rising to the ceiling to further propagate the feeling that the inflatable
+                    sculpture was alive. Created in collaboration with Dianne Cao (MIT) and Sarah Perez (MIT).
+                </p>
+            </div>
+            <div class="gallery-gorgons">
+                <div class="gallery-item item-1">
+                    <img src="images/gorgon1.png" alt="Gorgons installation 1">
+                </div>
+                <div class="gallery-item item-2">
+                    <img src="images/gorgon2.png" alt="Gorgons installation 2">
+                </div>
+                <div class="gallery-item item-3">
+                    <img src="images/gorgon3.png" alt="Gorgons installation 3">
+                </div>
+                <div class="gallery-item item-4">
+                    <img src="images/gorgon4.png" alt="Gorgons installation 4">
+                </div>
+                <div class="gallery-item item-5">
+                    <img src="images/gorgon5.png" alt="Gorgons installation 5">
+                </div>
+                <div class="gallery-item item-6">
+                    <img src="images/gorgon6.png" alt="Gorgons installation 6">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project 8: Willow - RIGHT LAYOUT -->
+    <section id="project8" class="project-section">
+        <div class="project-container layout-right">
+            <div class="gallery-willow">
+                <div class="gallery-item item-1">
+                    <img src="images/willow1.png" alt="Willow tree 1">
+                </div>
+                <div class="gallery-item item-2">
+                    <img src="images/willow2.png" alt="Willow tree 2">
+                </div>
+                <div class="gallery-item item-3">
+                    <img src="images/willow3.png" alt="Willow tree 3">
+                </div>
+            </div>
+            <div class="project-header">
+                <div class="project-number">Project 008</div>
+                <h2 class="project-title">Algorithmic Willow Tree</h2>
+                <p class="project-description">
+                    This willow tree was created as an exercise in more complex Grasshopper coding. I utilized simple solids
+                    and shapes in order to highlight the central feature of this project: using algorithmic
+                    extensions such as looping and randomization, this Grasshopper program produces a slightly different
+                    willow tree with customizable parameters each time it is run. The algorithm was designed
+                    with the natural random growing, branching behavior of real-life willows.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Baking Section - CENTERED -->
+    <section id="baking" class="project-section">
+        <div class="baking-container">
+            <div class="baking-header">
+                <div class="project-number">Bonus</div>
+                <h2 class="project-title">Baking</h2>
+                <p class="project-description" style="max-width: 800px; margin: 0 auto;">
+                    Baking. My one true love. An art and science like no other. Enjoy some of my recent
+                    creations below.
+                </p>
+            </div>
+            <div class="baking-gallery">
+                <div class="baking-item">
+                    <img src="images/baking/appledutchbaby.png" alt="Apple Dutch Baby">
+                    <div class="baking-caption">Apple Dutch Baby</div>
+                </div>
+                <div class="baking-item">
+                    <img src="images/baking/bananashortbreadcookies.png" alt="Banana Shortbread">
+                    <div class="baking-caption">Banana Shortbread</div>
+                </div>
+                <div class="baking-item">
+                    <img src="images/baking/berrychantillycookies.JPG" alt="Berry Chantilly">
+                    <div class="baking-caption">Berry Chantilly</div>
+                </div>
+                <div class="baking-item">
+                    <img src="images/baking/bostoncreampie.jpg" alt="Boston Cream Pie">
+                    <div class="baking-caption">Boston Cream Pie</div>
+                </div>
+                <div class="baking-item">
+                    <img src="images/baking/halloweenhandpies.jpg" alt="Halloween Hand Pies">
+                    <div class="baking-caption">Halloween Hand Pies</div>
+                </div>
+                <div class="baking-item">
+                    <img src="images/baking/mangocrepecake.png" alt="Mango Crepe Cake">
+                    <div class="baking-caption">Mango Crepe Cake</div>
+                </div>
+                <div class="baking-item">
+                    <img src="images/baking/matchacrepecake.jpg" alt="Matcha Crepe Cake">
+                    <div class="baking-caption">Matcha Crepe Cake</div>
+                </div>
+                <div class="baking-item">
+                    <img src="images/baking/pearupsidedowncake.png" alt="Pear Upside Down Cake">
+                    <div class="baking-caption">Pear Upside Down Cake</div>
+                </div>
+                <div class="baking-item">
+                    <img src="images/baking/pumpkincinnamonrolls.png" alt="Pumpkin Cinnamon Rolls">
+                    <div class="baking-caption">Pumpkin Cinnamon Rolls</div>
+                </div>
+                <div class="baking-item">
+                    <img src="images/baking/smoresbars.JPG" alt="S'mores Bars">
+                    <div class="baking-caption">S'mores Bars</div>
+                </div>
+                <div class="baking-item">
+                    <img src="images/baking/tieredmatchachiffoncake.png" alt="Matcha Chiffon Cake">
+                    <div class="baking-caption">Matcha Chiffon Cake</div>
+                </div>
+                <div class="baking-item">
+                    <img src="images/baking/treslechestiramisu.jpg" alt="Tres Leches Tiramisu">
+                    <div class="baking-caption">Tres Leches Tiramisu</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="about-container">
+            <h2>About Me</h2>
+            <div class="about-text">
+                <p>
+                    <strong>I'm Sofia Eun-Young Guerra,</strong> a MIT '28 majoring in Computer Science & Cognitive Science and Art & Design. I'm
+                    most interested in the intersection of storytelling, interactive design, digital fabrication, and parametric modeling. My 
+                    favorite animal is the blunt nose six gill shark. 
+                </p>
+            </div>
+            <div class="skills">
+                <span class="skill-tag">Grasshopper</span>
+                <span class="skill-tag">Rhino 3D</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Parametric Design</span>
+                <span class="skill-tag">Generative Systems</span>
+                <span class="skill-tag">3D Modeling</span>
+                <span class="skill-tag">Laser Cutting</span>
+                <span class="skill-tag">Digital Fabrication</span>
+                <span class="skill-tag">Algorithmic Design</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer/Contact -->
+    <footer id="contact">
+        <h3>Let's Connect</h3>
+        <p>segue@mit.edu | sofiaeguerra144@gmail.com | 253-677-6683</p>
+        <div class="social-links">
+            <a href="https://www.instagram.com/sofiaa_eun?igsh=MThoM2dreWkzcHd3Nw%3D%3D&utm_source=qr" target="_blank">Instagram</a>
+            <a href="https://www.linkedin.com/in/sofia-eun-young-guerra-71949a243/" target="_blank">LinkedIn</a>
+            <a href="https://sofieun.github.io/writing-portfolio/" target="_blank">Writing Portfolio</a>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll reveal animation
+        function reveal() {
+            const containers = document.querySelectorAll('.project-container, .about-container, .baking-container');
+
+            containers.forEach(container => {
+                const windowHeight = window.innerHeight;
+                const elementTop = container.getBoundingClientRect().top;
+                const elementVisible = 150;
+
+                if (elementTop < windowHeight - elementVisible) {
+                    container.classList.add('visible');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', reveal);
+        reveal();
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
