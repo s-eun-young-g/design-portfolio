@@ -1,0 +1,108 @@
+py2gh — definition description
+================================
+Objects: 41  (sliders: 10, toggles: 0, operations: 31, panels: 0)
+
+Parametric inputs (Number Sliders):
+  iteration count        = 10       [0 .. 10]
+  branches per iteration = 1        [1 .. 5]
+  length factor          = 0.5      [0.5 .. 1.5]
+  radius factor          = 0.5      [0.5 .. 1.5]
+  branch length          = 1        [1 .. 10]
+  trunk radius           = 0.5      [0.5 .. 5]
+  0                      = 0        [0 .. 100]
+  360                    = 360      [0 .. 1000]
+  60                     = 60       [0 .. 1000]
+  0                      = 0        [0 .. 100]
+
+Operations:
+  [1] Construct Domain
+      Domain start=360  Domain end=0
+  [2] Construct Domain
+      Domain start=60  Domain end=0
+  [3] Line  [geometry]
+      Start Point=[4] Point  End Point=[5] Point
+  [4] Point  [geometry]
+      (no inputs)
+  [5] Point  [geometry]
+      (no inputs)
+  [6] Loop Start
+      (no inputs)
+  [7] Loop End
+      (no inputs)
+  [8] End Points  [geometry]
+      Curve=—
+  [9] Button
+      (no inputs)
+  [10] Random
+      Range=[1] Construct Domain  Number=1  Seed=2
+  [11] Random
+      Range=[2] Construct Domain  Number=1  Seed=2
+  [12] List Item
+      (no inputs)
+  [13] Integer
+      (no inputs)
+  [14] Length
+      Curve=—
+  [15] Multiplication
+      (no inputs)
+  [16] Flatten Tree
+      Tree=—  Path={0}
+  [17] List Length
+      List=[16] Flatten Tree
+  [18] Multiplication
+      (no inputs)
+  [19] Partition List
+      List=[10] Random  Size=branches per iteration
+  [20] Partition List
+      List=[11] Random  Size=branches per iteration
+  [21] Rotate 3D
+      Geometry=[22] Unit Z  Angle=[27] Radians  Center=<gh_point3d>  Axis=[23] Unit X
+  [22] Unit Z
+      Factor=1.0
+  [23] Unit X
+      Factor=1.0
+  [24] Rotate 3D
+      Geometry=[21] Rotate 3D  Angle=[26] Radians  Center=<gh_point3d>  Axis=[25] Unit Z
+  [25] Unit Z
+      Factor=1.0
+  [26] Radians
+      Degrees=[19] Partition List
+  [27] Radians
+      Degrees=[20] Partition List
+  [28] Graft Tree
+      Tree=[24] Rotate 3D
+  [29] Line SDL  [geometry]
+      Start=—  Direction=[28] Graft Tree  Length=1.0
+  [30] Pipe
+      Curve=—  Radius=1.0  Caps=0
+  [31] Integer
+      (no inputs)
+
+Geometry / shapes:
+  [3] Line
+  [4] Point
+  [5] Point
+  [8] End Points
+  [29] Line SDL
+
+Outputs (Panels):
+  (none)
+
+Components without a native Python mapping (emitted as gh(...) on decompile):
+  - Button
+  - Construct Domain
+  - Flatten Tree
+  - Graft Tree
+  - Integer
+  - Length
+  - Line SDL
+  - List Item
+  - List Length
+  - Loop End
+  - Loop Start
+  - Partition List
+  - Point
+  - Radians
+  - Random
+  - Rotate 3D
+  - Unit X
