@@ -1,0 +1,991 @@
+py2gh — definition description
+================================
+Objects: 467  (sliders: 124, toggles: 0, operations: 341, panels: 2)
+
+Parametric inputs (Number Sliders):
+  const = 150      [0 .. 1000]
+  const = 0.75     [0 .. 1]
+  const = 6        [0 .. 10]
+  const = 100      [0 .. 100]
+  const = 1.65     [0 .. 10]
+  const = 1.5      [0 .. 10]
+  const = 0        [0 .. 100]
+  const = 46       [0 .. 100]
+  const = 1        [0 .. 1]
+  const = 2        [0 .. 10]
+  const = 19       [0 .. 100]
+  const = 9        [0 .. 10]
+  const = 2        [0 .. 10]
+  const = 1        [0 .. 1]
+  const = 8        [0 .. 10]
+  const = 0.32     [0 .. 1]
+  const = 8        [0 .. 10]
+  const = 22.5     [0 .. 100]
+  const = 1        [0 .. 1]
+  const = 2        [0 .. 10]
+  const = 3        [0 .. 10]
+  const = 4        [0 .. 10]
+  const = 5        [0 .. 10]
+  const = 6        [0 .. 10]
+  const = 7        [0 .. 10]
+  const = 8        [0 .. 10]
+  const = 9        [0 .. 10]
+  const = 10       [0 .. 10]
+  const = 11       [0 .. 100]
+  const = 12       [0 .. 100]
+  const = 13       [0 .. 100]
+  const = 14       [0 .. 100]
+  const = 15       [0 .. 100]
+  const = 1        [0 .. 1]
+  const = 2        [0 .. 10]
+  const = 3        [0 .. 10]
+  const = 4        [0 .. 10]
+  const = 5        [0 .. 10]
+  const = 6        [0 .. 10]
+  const = 7        [0 .. 10]
+  const = 8        [0 .. 10]
+  const = 9        [0 .. 10]
+  const = 10       [0 .. 10]
+  const = 11       [0 .. 100]
+  const = 12       [0 .. 100]
+  const = 13       [0 .. 100]
+  const = 14       [0 .. 100]
+  const = 15       [0 .. 100]
+  const = 100      [0 .. 100]
+  const = 18       [0 .. 50]
+  const = 1000     [0 .. 1000]
+  const = 1        [0 .. 1]
+  const = 0        [0 .. 100]
+  const = 0        [0 .. 100]
+  const = 1.65     [0 .. 10]
+  const = 1        [0 .. 1]
+  const = 0        [0 .. 100]
+  const = 1        [0 .. 1]
+  const = 2        [0 .. 10]
+  const = 3        [0 .. 10]
+  const = 4        [0 .. 10]
+  const = 5        [0 .. 10]
+  const = 6        [0 .. 10]
+  const = 7        [0 .. 10]
+  const = 86       [0 .. 200]
+  const = 0.81     [0 .. 5]
+  const = 2        [0 .. 10]
+  const = 277      [0 .. 400]
+  const = 1.79     [0 .. 5]
+  const = 2        [0 .. 10]
+  const = 1        [0 .. 1]
+  const = 12       [0 .. 50]
+  const = 0.26     [0 .. 5]
+  const = 7535     [1 .. 10000]
+  const = 0.569    [0 .. 1]
+  const = 7        [1 .. 25]
+  const = 0.15     [0 .. 1]
+  const = 12       [0 .. 40]
+  const = 2        [0 .. 10]
+  const = 19       [0 .. 100]
+  const = 9        [0 .. 10]
+  const = 1        [0 .. 1]
+  const = 2        [0 .. 10]
+  const = 3        [0 .. 10]
+  const = 4        [0 .. 10]
+  const = 5        [0 .. 10]
+  const = 6        [0 .. 10]
+  const = 7        [0 .. 10]
+  const = 0        [0 .. 100]
+  const = 266      [0 .. 1000]
+  const = 3        [0 .. 10]
+  const = 0        [0 .. 100]
+  const = 13       [0 .. 50]
+  const = 0        [0 .. 100]
+  const = 1        [0 .. 1]
+  const = 2        [0 .. 10]
+  const = 1        [0 .. 1]
+  const = 11.5     [0 .. 20]
+  const = 2.63     [0 .. 5]
+  const = 1.43     [0 .. 5]
+  const = 4.47     [0 .. 10]
+  const = 0        [0 .. 100]
+  const = 266      [0 .. 1000]
+  const = 3        [0 .. 10]
+  const = 0        [0 .. 100]
+  const = 19       [0 .. 50]
+  const = 0        [0 .. 100]
+  const = 1        [0 .. 1]
+  const = 2        [0 .. 10]
+  const = 1        [0 .. 1]
+  const = 6.8      [0 .. 20]
+  const = 3.13     [0 .. 5]
+  const = 2.06     [0 .. 5]
+  const = 5.12     [0 .. 10]
+  const = 6.8      [0 .. 20]
+  const = 5        [0 .. 5]
+  const = 1        [0 .. 1]
+  const = 17       [0 .. 100]
+  const = 18       [0 .. 100]
+  const = 0        [0 .. 100]
+  const = 9        [0 .. 13]
+  const = 0        [0 .. 100]
+  const = 1        [0 .. 1]
+  const = 0.22     [0 .. 1]
+
+Operations:
+  [1] Solver
+      GoalObjects=—  Reset=[5] Button  Threshold=1e-15  Tolerance=0.01  On=True
+  [2] Polyhedron
+      Name=False  Plane=[3] XY Plane  Scale=Number Slider
+  [3] XY Plane  [geometry]
+      Origin=<gh_point3d>
+  [4] Mesh Join  [geometry]
+      Meshes=[2] Polyhedron
+  [5] Button
+      (no inputs)
+  [6] Show
+      G=[228] Mesh Join
+  [7] Entwine
+      (no inputs)
+  [8] Cull Duplicates
+      Points=[230] Deconstruct Mesh  Tolerance=0.1
+  [9] Deconstruct Mesh  [geometry]
+      Mesh=[228] Mesh Join
+  [10] Mesh Edges  [geometry]
+      Mesh=[4] Mesh Join
+  [11] Anchor
+      Point=[245] Cull Duplicates  Target=—  Strength=Number Slider
+  [12] Length
+      Curve=[10] Mesh Edges
+  [13] Multiplication
+      (no inputs)
+  [14] Length(Line)  [geometry]
+      Line=[10] Mesh Edges  Length=—  Strength=Number Slider
+  [15] List Item
+      (no inputs)
+  [16] Mesh  [geometry]
+      (no inputs)
+  [17] Pipe
+      Curve=[229] Mesh Edges  Radius=Number Slider  Caps=Number Slider
+  [18] Custom Preview
+      Geometry=[17] Pipe  Material=[19] Colour Picker
+  [19] Colour Picker
+      (no inputs)
+  [20] Weaverbird's Mesh Thicken  [geometry]
+      Mesh/Curves=—  Distance=Number Slider  OffsetType=0
+  [21] Colour Picker
+      (no inputs)
+  [22] Polyhedron
+      Name=False  Plane=[3] XY Plane  Scale=1.0
+  [23] Explode
+      Curve=[22] Polyhedron  Recursive=True
+  [24] Cull Duplicates
+      Points=[23] Explode  Tolerance=0.1
+  [25] Deconstruct
+      Point=[24] Cull Duplicates
+  [26] Cull Pattern
+      List=[24] Cull Duplicates  Cull Pattern=[27] Smaller Than
+  [27] Smaller Than
+      First Number=[25] Deconstruct  Second Number=Number Slider
+  [28] Addition
+      (no inputs)
+  [29] Plane  [geometry]
+      (no inputs)
+  [30] Move To Plane  [geometry]
+      Geometry=[26] Cull Pattern  Plane=[29] Plane  Above=True  Below=True
+  [31] Plane 3Pt  [geometry]
+      Point A=—  Point B=—  Point C=—
+  [32] List Item
+      (no inputs)
+  [33] List Item
+      (no inputs)
+  [34] List Item
+      (no inputs)
+  [35] Cull Duplicates
+      Points=[230] Deconstruct Mesh  Tolerance=0.1
+  [36] Deconstruct
+      Point=[35] Cull Duplicates
+  [37] Sort List
+      (no inputs)
+  [38] List Item
+      (no inputs)
+  [39] List Item
+      (no inputs)
+  [40] List Item
+      (no inputs)
+  [41] Equality
+      First Number=—  Second Number=[36] Deconstruct
+  [42] Equality
+      First Number=—  Second Number=[36] Deconstruct
+  [43] Equality
+      First Number=[131] Round  Second Number=[132] Round
+  [44] Cull Pattern
+      List=[35] Cull Duplicates  Cull Pattern=[41] Equality
+  [45] Cull Pattern
+      List=[35] Cull Duplicates  Cull Pattern=[42] Equality
+  [46] Cull Pattern
+      List=[35] Cull Duplicates  Cull Pattern=[43] Equality
+  [47] Point  [geometry]
+      (no inputs)
+  [48] Distance
+      Point A=[30] Move To Plane  Point B=[130] Move To Plane
+  [49] Circle  [geometry]
+      Plane=[51] XY Plane  Radius=[157] Length
+  [50] Circle  [geometry]
+      Plane=[51] XY Plane  Radius=[48] Distance
+  [51] XY Plane  [geometry]
+      Origin=<gh_point3d>
+  [52] Move To Plane  [geometry]
+      Geometry=[49] Circle  Plane=[29] Plane  Above=True  Below=True
+  [53] Move To Plane  [geometry]
+      Geometry=[50] Circle  Plane=[29] Plane  Above=True  Below=True
+  [54] Closest Points  [geometry]
+      Point=[30] Move To Plane  Cloud=[45] Cull Pattern  Count=Number Slider
+  [55] Line  [geometry]
+      Start Point=—  End Point=[30] Move To Plane
+  [56] List Item
+      (no inputs)
+  [57] Line  [geometry]
+      Start Point=—  End Point=[30] Move To Plane
+  [58] List Item
+      (no inputs)
+  [59] Length
+      Curve=[55] Line
+  [60] Subtraction
+      (no inputs)
+  [61] List Item
+      (no inputs)
+  [62] List Item
+      (no inputs)
+  [63] Deconstruct Mesh  [geometry]
+      Mesh=[68] Quad Remesh
+  [64] Closest Point  [geometry]
+      Point=[158] Move To Plane  Cloud=[166] Cull Pattern
+  [65] Divide Curve  [geometry]
+      Curve=—  Count=Number Slider  Kinks=False
+  [66] List Item
+      (no inputs)
+  [67] Mesh  [geometry]
+      (no inputs)
+  [68] Quad Remesh  [geometry]
+      Geometry=[67] Mesh  Guides=—  Settings=True
+  [69] Button
+      (no inputs)
+  [70] Show
+      G=[68] Quad Remesh
+  [71] EdgeLengths
+      Mesh=[68] Quad Remesh  LengthFactor=Number Slider  Strength=Number Slider
+  [72] BouncySolver
+      GoalObjects=—  Reset=[69] Button  Threshold=1e-15  Tolerance=0.0001  Damping=0.99  Iterations=10  On=True
+  [73] Point  [geometry]
+      (no inputs)
+  [74] List Item
+      (no inputs)
+  [75] Mesh  [geometry]
+      (no inputs)
+  [76] Divide Curve  [geometry]
+      Curve=—  Count=Number Slider  Kinks=False
+  [77] Rotate Axis
+      Geometry=[76] Divide Curve  Angle=[81] Radians  Axis=[78] Line
+  [78] Line  [geometry]
+      Start Point=[79] Point  End Point=[80] Point
+  [79] Point  [geometry]
+      (no inputs)
+  [80] Point  [geometry]
+      (no inputs)
+  [81] Radians
+      Degrees=Number Slider
+  [82] List Item
+      (no inputs)
+  [83] List Item
+      (no inputs)
+  [84] List Item
+      (no inputs)
+  [85] List Item
+      (no inputs)
+  [86] List Item
+      (no inputs)
+  [87] List Item
+      (no inputs)
+  [88] List Item
+      (no inputs)
+  [89] List Item
+      (no inputs)
+  [90] List Item
+      (no inputs)
+  [91] List Item
+      (no inputs)
+  [92] List Item
+      (no inputs)
+  [93] List Item
+      (no inputs)
+  [94] List Item
+      (no inputs)
+  [95] List Item
+      (no inputs)
+  [96] List Item
+      (no inputs)
+  [97] List Item
+      (no inputs)
+  [98] Anchor
+      Point=—  Target=—  Strength=Number Slider
+  [99] Anchor
+      Point=—  Target=—  Strength=Number Slider
+  [100] Anchor
+      Point=—  Target=—  Strength=Number Slider
+  [101] Anchor
+      Point=—  Target=—  Strength=Number Slider
+  [102] Anchor
+      Point=—  Target=—  Strength=Number Slider
+  [103] Anchor
+      Point=—  Target=—  Strength=Number Slider
+  [104] Anchor
+      Point=—  Target=—  Strength=Number Slider
+  [105] Anchor
+      Point=—  Target=—  Strength=Number Slider
+  [106] Anchor
+      Point=—  Target=—  Strength=Number Slider
+  [107] Anchor
+      Point=—  Target=—  Strength=Number Slider
+  [108] Anchor
+      Point=—  Target=—  Strength=Number Slider
+  [109] Anchor
+      Point=—  Target=—  Strength=Number Slider
+  [110] Anchor
+      Point=—  Target=—  Strength=Number Slider
+  [111] Anchor
+      Point=—  Target=—  Strength=Number Slider
+  [112] Anchor
+      Point=—  Target=—  Strength=Number Slider
+  [113] Anchor
+      Point=—  Target=—  Strength=Number Slider
+  [114] List Item
+      (no inputs)
+  [115] List Item
+      (no inputs)
+  [116] List Item
+      (no inputs)
+  [117] List Item
+      (no inputs)
+  [118] List Item
+      (no inputs)
+  [119] List Item
+      (no inputs)
+  [120] List Item
+      (no inputs)
+  [121] List Item
+      (no inputs)
+  [122] List Item
+      (no inputs)
+  [123] List Item
+      (no inputs)
+  [124] List Item
+      (no inputs)
+  [125] List Item
+      (no inputs)
+  [126] List Item
+      (no inputs)
+  [127] List Item
+      (no inputs)
+  [128] List Item
+      (no inputs)
+  [129] List Item
+      (no inputs)
+  [130] Move To Plane  [geometry]
+      Geometry=[47] Point  Plane=[29] Plane  Above=True  Below=True
+  [131] Round
+      Number=—
+  [132] Round
+      Number=[36] Deconstruct
+  [133] Divide Curve  [geometry]
+      Curve=[55] Line  Count=Number Slider  Kinks=False
+  [134] PolyLine  [geometry]
+      Vertices=[133] Divide Curve  Closed=False
+  [135] Explode
+      Curve=[134] PolyLine  Recursive=True
+  [136] Length(Line)  [geometry]
+      Line=[135] Explode  Length=—  Strength=Number Slider
+  [137] Closest Point  [geometry]
+      Point=[133] Divide Curve  Cloud=[142] Flatten Tree
+  [138] List Item
+      (no inputs)
+  [139] Line  [geometry]
+      Start Point=[133] Divide Curve  End Point=—
+  [140] Custom Preview
+      Geometry=[176] Weaverbird's Mesh Thicken  Material=[340] Create Material
+  [141] Deconstruct Mesh  [geometry]
+      Mesh=[68] Quad Remesh
+  [142] Flatten Tree
+      Tree=[141] Deconstruct Mesh  Path={0}
+  [143] Cone
+      Base=[144] Move To Plane  Radius=0.5  Length=1.0
+  [144] Move To Plane  [geometry]
+      Geometry=[51] XY Plane  Plane=[29] Plane  Above=True  Below=True
+  [145] Subtraction
+      (no inputs)
+  [146] ArcCosine  [geometry]
+      Value=[147] Division
+  [147] Division
+      A=—  B=—
+  [148] Tangent
+      Value=[146] ArcCosine
+  [149] Multiplication
+      (no inputs)
+  [150] List Item
+      (no inputs)
+  [151] List Item
+      (no inputs)
+  [152] List Item
+      (no inputs)
+  [153] List Item
+      (no inputs)
+  [154] Move To Plane  [geometry]
+      Geometry=—  Plane=[155] XY Plane  Above=True  Below=True
+  [155] XY Plane  [geometry]
+      Origin=<gh_point3d>
+  [156] Line  [geometry]
+      Start Point=[154] Move To Plane  End Point=[47] Point
+  [157] Length
+      Curve=[156] Line
+  [158] Move To Plane  [geometry]
+      Geometry=[77] Rotate Axis  Plane=[159] Plane  Above=True  Below=True
+  [159] Plane  [geometry]
+      (no inputs)
+  [160] Plane 3Pt  [geometry]
+      Point A=—  Point B=—  Point C=—
+  [161] List Item
+      (no inputs)
+  [162] List Item
+      (no inputs)
+  [163] List Item
+      (no inputs)
+  [164] Smaller Than
+      First Number=[165] Deconstruct  Second Number=0.0
+  [165] Deconstruct
+      Point=[63] Deconstruct Mesh
+  [166] Cull Pattern
+      List=[63] Deconstruct Mesh  Cull Pattern=[164] Smaller Than
+  [167] Boolean Toggle
+      (no inputs)
+  [168] Surface Split  [geometry]
+      Surface=[143] Cone  Curves=[169] Move To Plane
+  [169] Move To Plane  [geometry]
+      Geometry=[49] Circle  Plane=[159] Plane  Above=True  Below=True
+  [170] List Item
+      (no inputs)
+  [171] Length(Line)  [geometry]
+      Line=[139] Line  Length=Number Slider  Strength=Number Slider
+  [172] Entwine
+      (no inputs)
+  [173] Pipe
+      Curve=[55] Line  Radius=Number Slider  Caps=Number Slider
+  [174] Custom Preview
+      Geometry=[173] Pipe  Material=[175] Colour Picker
+  [175] Colour Picker
+      (no inputs)
+  [176] Weaverbird's Mesh Thicken  [geometry]
+      Mesh/Curves=[75] Mesh  Distance=Number Slider  OffsetType=0
+  [177] Unit X
+      Factor=1.0
+  [178] Unit X
+      Factor=1.0
+  [179] Negative
+      Value=[178] Unit X
+  [180] Unit Y
+      Factor=1.0
+  [181] Unit Y
+      Factor=1.0
+  [182] Negative
+      Value=[181] Unit Y
+  [183] Point  [geometry]
+      (no inputs)
+  [184] List Item
+      (no inputs)
+  [185] List Item
+      (no inputs)
+  [186] List Item
+      (no inputs)
+  [187] List Item
+      (no inputs)
+  [188] Move
+      Geometry=—  Motion=[196] Line SDL
+  [189] Move
+      Geometry=—  Motion=[198] Line SDL
+  [190] Move
+      Geometry=—  Motion=[197] Line SDL
+  [191] Move
+      Geometry=—  Motion=[199] Line SDL
+  [192] Unit Vector  [geometry]
+      Vector=[177] Unit X
+  [193] Unit Vector  [geometry]
+      Vector=[180] Unit Y
+  [194] Unit Vector  [geometry]
+      Vector=[179] Negative
+  [195] Unit Vector  [geometry]
+      Vector=[182] Negative
+  [196] Line SDL  [geometry]
+      Start=—  Direction=[192] Unit Vector  Length=Number Slider
+  [197] Line SDL  [geometry]
+      Start=—  Direction=[193] Unit Vector  Length=Number Slider
+  [198] Line SDL  [geometry]
+      Start=—  Direction=[194] Unit Vector  Length=Number Slider
+  [199] Line SDL  [geometry]
+      Start=—  Direction=[195] Unit Vector  Length=Number Slider
+  [200] Closest Point  [geometry]
+      Point=[190] Move  Cloud=[45] Cull Pattern
+  [201] Line  [geometry]
+      Start Point=[190] Move  End Point=[200] Closest Point
+  [202] Pipe
+      Curve=[249] Line SDL  Radius=Number Slider  Caps=Number Slider
+  [203] Custom Preview
+      Geometry=[202] Pipe  Material=[204] Colour Picker
+  [204] Colour Picker
+      (no inputs)
+  [205] Point  [geometry]
+      (no inputs)
+  [206] Move To Plane  [geometry]
+      Geometry=[205] Point  Plane=[207] XY Plane  Above=True  Below=True
+  [207] XY Plane  [geometry]
+      Origin=<gh_point3d>
+  [208] Point  [geometry]
+      (no inputs)
+  [209] Line  [geometry]
+      Start Point=[208] Point  End Point=[206] Move To Plane
+  [210] Line SDL  [geometry]
+      Start=[208] Point  Direction=[209] Line  Length=Number Slider
+  [211] End Points  [geometry]
+      Curve=[210] Line SDL
+  [212] Move To Plane  [geometry]
+      Geometry=[211] End Points  Plane=[29] Plane  Above=True  Below=True
+  [213] Line  [geometry]
+      Start Point=—  End Point=—
+  [214] Sort List
+      (no inputs)
+  [215] Deconstruct
+      Point=[212] Move To Plane
+  [216] Sort List
+      (no inputs)
+  [217] Deconstruct
+      Point=[242] Cull Pattern
+  [218] Pipe
+      Curve=[213] Line  Radius=Number Slider  Caps=Number Slider
+  [219] Custom Preview
+      Geometry=[218] Pipe  Material=[220] Colour Picker
+  [220] Colour Picker
+      (no inputs)
+  [221] EdgeLengths
+      Mesh=[228] Mesh Join  LengthFactor=Number Slider  Strength=Number Slider
+  [222] Mesh Edges  [geometry]
+      Mesh=[68] Quad Remesh
+  [223] Length(Line)  [geometry]
+      Line=[224] Flatten Tree  Length=Number Slider  Strength=Number Slider
+  [224] Flatten Tree
+      Tree=[222] Mesh Edges  Path={0}
+  [225] Length(Line)  [geometry]
+      Line=[222] Mesh Edges  Length=Number Slider  Strength=Number Slider
+  [226] Polyhedron
+      Name=False  Plane=[3] XY Plane  Scale=1.0
+  [227] Subtraction
+      (no inputs)
+  [228] Mesh Join  [geometry]
+      Meshes=[226] Polyhedron
+  [229] Mesh Edges  [geometry]
+      Mesh=[228] Mesh Join
+  [230] Deconstruct Mesh  [geometry]
+      Mesh=[4] Mesh Join
+  [231] Cull Duplicates
+      Points=[9] Deconstruct Mesh  Tolerance=0.1
+  [232] Deconstruct
+      Point=[231] Cull Duplicates
+  [233] Sort List
+      (no inputs)
+  [234] List Item
+      (no inputs)
+  [235] List Item
+      (no inputs)
+  [236] List Item
+      (no inputs)
+  [237] Equality
+      First Number=—  Second Number=[232] Deconstruct
+  [238] Equality
+      First Number=—  Second Number=[232] Deconstruct
+  [239] Equality
+      First Number=[243] Round  Second Number=[244] Round
+  [240] Cull Pattern
+      List=[231] Cull Duplicates  Cull Pattern=[237] Equality
+  [241] Cull Pattern
+      List=[231] Cull Duplicates  Cull Pattern=[238] Equality
+  [242] Cull Pattern
+      List=[231] Cull Duplicates  Cull Pattern=[239] Equality
+  [243] Round
+      Number=—
+  [244] Round
+      Number=[232] Deconstruct
+  [245] Cull Duplicates
+      Points=[9] Deconstruct Mesh  Tolerance=0.1
+  [246] Line SDL  [geometry]
+      Start=—  Direction=[192] Unit Vector  Length=Number Slider
+  [247] Line SDL  [geometry]
+      Start=—  Direction=[193] Unit Vector  Length=Number Slider
+  [248] Line SDL  [geometry]
+      Start=—  Direction=[194] Unit Vector  Length=Number Slider
+  [249] Line SDL  [geometry]
+      Start=—  Direction=[195] Unit Vector  Length=Number Slider
+  [250] Point  [geometry]
+      (no inputs)
+  [251] List Item
+      (no inputs)
+  [252] List Item
+      (no inputs)
+  [253] List Item
+      (no inputs)
+  [254] List Item
+      (no inputs)
+  [255] List Item
+      (no inputs)
+  [256] List Item
+      (no inputs)
+  [257] List Item
+      (no inputs)
+  [258] List Item
+      (no inputs)
+  [259] End Points  [geometry]
+      Curve=[248] Line SDL
+  [260] Closest Point  [geometry]
+      Point=[259] End Points  Cloud=[241] Cull Pattern
+  [261] Line  [geometry]
+      Start Point=[260] Closest Point  End Point=[259] End Points
+  [262] Line  [geometry]
+      Start Point=[264] Construct Point  End Point=[263] Construct Point
+  [263] Construct Point  [geometry]
+      X coordinate=Number Slider  Y coordinate=Number Slider  Z coordinate=[265] Negative
+  [264] Construct Point  [geometry]
+      X coordinate=Number Slider  Y coordinate=Number Slider  Z coordinate=Number Slider
+  [265] Negative
+      Value=Number Slider
+  [266] Pipe Variable
+      Curve=[262] Line  Parameters=Number Slider  Radii=Number Slider  Caps=Number Slider
+  [267] Solid Union
+      Breps=[268] Pipe
+  [268] Pipe
+      Curve=[269] Line  Radius=Number Slider  Caps=Number Slider
+  [269] Line  [geometry]
+      Start Point=[270] Point  End Point=[271] Construct Point
+  [270] Point  [geometry]
+      (no inputs)
+  [271] Construct Point  [geometry]
+      X coordinate=Number Slider  Y coordinate=Number Slider  Z coordinate=Number Slider
+  [272] Trim Solid
+      Shape=[266] Pipe Variable  Cutters=[268] Pipe
+  [273] Move To Plane  [geometry]
+      Geometry=[267] Solid Union  Plane=[29] Plane  Above=True  Below=True
+  [274] Move
+      Geometry=[273] Move To Plane  Motion=[276] Line
+  [275] End Points  [geometry]
+      Curve=[55] Line
+  [276] Line  [geometry]
+      Start Point=[278] Move To Plane  End Point=[275] End Points
+  [277] Point  [geometry]
+      (no inputs)
+  [278] Move To Plane  [geometry]
+      Geometry=[277] Point  Plane=[29] Plane  Above=True  Below=True
+  [279] Move
+      Geometry=[274] Move  Motion=[280] Line SDL
+  [280] Line SDL  [geometry]
+      Start=[275] End Points  Direction=<gh_point3d>  Length=Number Slider
+  [281] Line  [geometry]
+      Start Point=[283] Construct Point  End Point=[282] Construct Point
+  [282] Construct Point  [geometry]
+      X coordinate=Number Slider  Y coordinate=Number Slider  Z coordinate=[284] Negative
+  [283] Construct Point  [geometry]
+      X coordinate=Number Slider  Y coordinate=Number Slider  Z coordinate=Number Slider
+  [284] Negative
+      Value=Number Slider
+  [285] Pipe Variable
+      Curve=[281] Line  Parameters=Number Slider  Radii=Number Slider  Caps=Number Slider
+  [286] Solid Union
+      Breps=[287] Pipe
+  [287] Pipe
+      Curve=[288] Line  Radius=Number Slider  Caps=Number Slider
+  [288] Line  [geometry]
+      Start Point=[289] Point  End Point=[290] Construct Point
+  [289] Point  [geometry]
+      (no inputs)
+  [290] Construct Point  [geometry]
+      X coordinate=Number Slider  Y coordinate=Number Slider  Z coordinate=Number Slider
+  [291] Trim Solid
+      Shape=[285] Pipe Variable  Cutters=[287] Pipe
+  [292] Move To Plane  [geometry]
+      Geometry=[286] Solid Union  Plane=[29] Plane  Above=True  Below=True
+  [293] Move
+      Geometry=[292] Move To Plane  Motion=[295] Line
+  [294] End Points  [geometry]
+      Curve=[213] Line
+  [295] Line  [geometry]
+      Start Point=[297] Move To Plane  End Point=[294] End Points
+  [296] Point  [geometry]
+      (no inputs)
+  [297] Move To Plane  [geometry]
+      Geometry=[296] Point  Plane=[29] Plane  Above=True  Below=True
+  [298] Move
+      Geometry=[293] Move  Motion=[299] Line SDL
+  [299] Line SDL  [geometry]
+      Start=[294] End Points  Direction=<gh_point3d>  Length=Number Slider
+  [300] Move To Plane  [geometry]
+      Geometry=[286] Solid Union  Plane=[29] Plane  Above=True  Below=True
+  [301] Move
+      Geometry=[300] Move To Plane  Motion=[303] Line
+  [302] End Points  [geometry]
+      Curve=—
+  [303] Line  [geometry]
+      Start Point=[305] Move To Plane  End Point=[302] End Points
+  [304] Point  [geometry]
+      (no inputs)
+  [305] Move To Plane  [geometry]
+      Geometry=[304] Point  Plane=[29] Plane  Above=True  Below=True
+  [306] Move
+      Geometry=[301] Move  Motion=[307] Line SDL
+  [307] Line SDL  [geometry]
+      Start=[302] End Points  Direction=<gh_point3d>  Length=Number Slider
+  [308] Custom Preview
+      Geometry=[306] Move  Material=[309] Colour Picker
+  [309] Colour Picker
+      (no inputs)
+  [310] Custom Preview
+      Geometry=[298] Move  Material=[309] Colour Picker
+  [311] Custom Preview
+      Geometry=[279] Move  Material=[309] Colour Picker
+  [312] Angle Split Mesh  [geometry]
+      Mesh=[16] Mesh  Angle=0.0  Opposite=False
+  [313] Area
+      (no inputs)
+  [314] List Item
+      (no inputs)
+  [315] List Item
+      (no inputs)
+  [316] List Item
+      (no inputs)
+  [317] Series
+      Start=Number Slider  Step=1.0  Count=Number Slider
+  [318] Cull Pattern
+      List=[317] Series  Cull Pattern=[323] Equality Within Tolerance
+  [319] Cull Pattern
+      List=[317] Series  Cull Pattern=[322] Equality Within Tolerance
+  [320] Cull Pattern
+      List=[317] Series  Cull Pattern=[321] Equality Within Tolerance
+  [321] Equality Within Tolerance
+      First Number=—  Second Number=—  Tolerance=Number Slider
+  [322] Equality Within Tolerance
+      First Number=—  Second Number=—  Tolerance=Number Slider
+  [323] Equality Within Tolerance
+      First Number=—  Second Number=—  Tolerance=Number Slider
+  [324] List Item
+      (no inputs)
+  [325] List Item
+      (no inputs)
+  [326] List Item
+      (no inputs)
+  [327] Weaverbird's Mesh Thicken  [geometry]
+      Mesh/Curves=—  Distance=Number Slider  OffsetType=0
+  [328] Weaverbird's Mesh Thicken  [geometry]
+      Mesh/Curves=—  Distance=Number Slider  OffsetType=0
+  [329] Colour Picker
+      (no inputs)
+  [330] Custom Preview
+      Geometry=[337] Weaverbird's Mesh Thicken  Material=[21] Colour Picker
+  [331] Custom Preview
+      Geometry=[20] Weaverbird's Mesh Thicken  Material=[329] Colour Picker
+  [332] Cull Pattern
+      List=[319] Cull Pattern  Cull Pattern=[336] Larger Than
+  [333] Cull Pattern
+      List=[319] Cull Pattern  Cull Pattern=[334] Smaller Than
+  [334] Smaller Than
+      First Number=[319] Cull Pattern  Second Number=Number Slider
+  [335] List Item
+      (no inputs)
+  [336] Larger Than
+      First Number=[319] Cull Pattern  Second Number=Number Slider
+  [337] Weaverbird's Mesh Thicken  [geometry]
+      Mesh/Curves=—  Distance=Number Slider  OffsetType=0
+  [338] Cull Index
+      List=[319] Cull Pattern  Indices=Number Slider  Wrap=True
+  [339] List Item
+      (no inputs)
+  [340] Create Material
+      Diffuse=[341] Colour Picker  Specular=<gh_drawing_color>  Emission=<gh_drawing_color>  Transparency=Number Slider  Shine=0
+  [341] Colour Picker
+      (no inputs)
+
+Geometry / shapes:
+  [3] XY Plane
+  [4] Mesh Join
+  [9] Deconstruct Mesh
+  [10] Mesh Edges
+  [14] Length(Line)
+  [16] Mesh
+  [20] Weaverbird's Mesh Thicken
+  [29] Plane
+  [30] Move To Plane
+  [31] Plane 3Pt
+  [47] Point
+  [49] Circle
+  [50] Circle
+  [51] XY Plane
+  [52] Move To Plane
+  [53] Move To Plane
+  [54] Closest Points
+  [55] Line
+  [57] Line
+  [63] Deconstruct Mesh
+  [64] Closest Point
+  [65] Divide Curve
+  [67] Mesh
+  [68] Quad Remesh
+  [73] Point
+  [75] Mesh
+  [76] Divide Curve
+  [78] Line
+  [79] Point
+  [80] Point
+  [130] Move To Plane
+  [133] Divide Curve
+  [134] PolyLine
+  [136] Length(Line)
+  [137] Closest Point
+  [139] Line
+  [141] Deconstruct Mesh
+  [144] Move To Plane
+  [146] ArcCosine
+  [154] Move To Plane
+  [155] XY Plane
+  [156] Line
+  [158] Move To Plane
+  [159] Plane
+  [160] Plane 3Pt
+  [168] Surface Split
+  [169] Move To Plane
+  [171] Length(Line)
+  [176] Weaverbird's Mesh Thicken
+  [183] Point
+  [192] Unit Vector
+  [193] Unit Vector
+  [194] Unit Vector
+  [195] Unit Vector
+  [196] Line SDL
+  [197] Line SDL
+  [198] Line SDL
+  [199] Line SDL
+  [200] Closest Point
+  [201] Line
+  [205] Point
+  [206] Move To Plane
+  [207] XY Plane
+  [208] Point
+  [209] Line
+  [210] Line SDL
+  [211] End Points
+  [212] Move To Plane
+  [213] Line
+  [222] Mesh Edges
+  [223] Length(Line)
+  [225] Length(Line)
+  [228] Mesh Join
+  [229] Mesh Edges
+  [230] Deconstruct Mesh
+  [246] Line SDL
+  [247] Line SDL
+  [248] Line SDL
+  [249] Line SDL
+  [250] Point
+  [259] End Points
+  [260] Closest Point
+  [261] Line
+  [262] Line
+  [263] Construct Point
+  [264] Construct Point
+  [269] Line
+  [270] Point
+  [271] Construct Point
+  [273] Move To Plane
+  [275] End Points
+  [276] Line
+  [277] Point
+  [278] Move To Plane
+  [280] Line SDL
+  [281] Line
+  [282] Construct Point
+  [283] Construct Point
+  [288] Line
+  [289] Point
+  [290] Construct Point
+  [292] Move To Plane
+  [294] End Points
+  [295] Line
+  [296] Point
+  [297] Move To Plane
+  [299] Line SDL
+  [300] Move To Plane
+  [302] End Points
+  [303] Line
+  [304] Point
+  [305] Move To Plane
+  [307] Line SDL
+  [312] Angle Split Mesh
+  [327] Weaverbird's Mesh Thicken
+  [328] Weaverbird's Mesh Thicken
+  [337] Weaverbird's Mesh Thicken
+
+Outputs (Panels):
+  panel  <-  —
+  panel  <-  —
+
+Components without a native Python mapping (emitted as gh(...) on decompile):
+  - Anchor
+  - Angle Split Mesh
+  - ArcCosine
+  - Area
+  - Boolean Toggle
+  - BouncySolver
+  - Button
+  - Circle
+  - Closest Point
+  - Closest Points
+  - Colour Picker
+  - Cone
+  - Create Material
+  - Cull Duplicates
+  - Cull Pattern
+  - Custom Preview
+  - Deconstruct Mesh
+  - Distance
+  - EdgeLengths
+  - Entwine
+  - Equality Within Tolerance
+  - Explode
+  - Flatten Tree
+  - Length
+  - Length(Line)
+  - Line SDL
+  - List Item
+  - Mesh
+  - Mesh Edges
+  - Mesh Join
+  - Move
+  - Move To Plane
+  - Pipe Variable
+  - Plane
+  - Plane 3Pt
+  - Point
+  - Polyhedron
+  - Quad Remesh
+  - Radians
+  - Rotate Axis
+  - Round
+  - Series
+  - Show
+  - Solver
+  - Sort List
+  - Surface Split
+  - Tangent
+  - Trim Solid
+  - Unit Vector
+  - Unit X
+  - Unit Y
+  - Weaverbird's Mesh Thicken
+  - XY Plane

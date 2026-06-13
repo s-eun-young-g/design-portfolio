@@ -1,0 +1,379 @@
+py2gh — definition description
+================================
+Objects: 171  (sliders: 12, toggles: 0, operations: 159, panels: 0)
+
+Parametric inputs (Number Sliders):
+  degrees of staircase (how many rotations)   = 1024.3   [360 .. 7200]
+  radius of staircase                         = 16.231   [10 .. 100]
+  height of staircase                         = 89.125   [10 .. 200]
+  number of points                            = 272      [20 .. 400]
+  number of steps                             = 65       [12 .. 240]
+  number of poles in railing                  = 90       [0 .. 500]
+  height of railing range: 2/5 to 3/5 gap     = 169      [144 .. 216]
+  thickness of handrail                       = 0.8      [0.1 .. 5]
+  0% to 100% of permitted pole thickness      = 59       [0 .. 100]
+  poles cut into steps slightly               = -0.01    [-0.5 .. -0.01]
+  thickness of central pole (lower = thicker) = 5        [4 .. 10]
+  const                                       = 1.3      [1 .. 1.5]
+
+Operations:
+  [1] Point Cylindrical  [geometry]
+      Base plane=[2] Point  Angle=[3] Range  Radius=radius of staircase  Elevation=[6] Range
+  [2] Point  [geometry]
+      (no inputs)
+  [3] Range
+      Domain=[4] Construct Domain  Steps=number of points
+  [4] Construct Domain
+      Domain start=0.0  Domain end=degrees of staircase (how many rotations)
+  [5] Bifocals
+      Exceptions=—
+  [6] Range
+      Domain=[7] Construct Domain  Steps=number of points
+  [7] Construct Domain
+      Domain start=0.0  Domain end=height of staircase
+  [8] Group
+      (no inputs)
+  [9] Group
+      (no inputs)
+  [10] Group
+      (no inputs)
+  [11] Group
+      (no inputs)
+  [12] Group
+      (no inputs)
+  [13] Group
+      (no inputs)
+  [14] Line SDL  [geometry]
+      Start=[2] Point  Direction=<gh_point3d>  Length=height of staircase
+  [15] Group
+      (no inputs)
+  [16] Loft
+      Curves=[14] Line SDL  Options=False
+  [17] Group
+      (no inputs)
+  [18] Interpolate
+      Vertices=[1] Point Cylindrical  Degree=3  Periodic=False  KnotStyle=1
+  [19] Group
+      (no inputs)
+  [20] Group
+      (no inputs)
+  [21] Divide Domain²
+      Domain=[16] Loft  U Count=[23] Number  V Count=number of steps
+  [22] Group
+      (no inputs)
+  [23] Number
+      (no inputs)
+  [24] Group
+      (no inputs)
+  [25] Divide Curve  [geometry]
+      Curve=[14] Line SDL  Count=number of steps  Kinks=False
+  [26] Group
+      (no inputs)
+  [27] XY Plane  [geometry]
+      Origin=[25] Divide Curve
+  [28] Group
+      (no inputs)
+  [29] Project
+      Geometry=[31] Isotrim  Plane=[27] XY Plane
+  [30] Group
+      (no inputs)
+  [31] Isotrim
+      Surface=[16] Loft  Domain=[21] Divide Domain²
+  [32] Group
+      (no inputs)
+  [33] Cull Index
+      List=[29] Project  Indices=number of steps  Wrap=True
+  [34] Group
+      (no inputs)
+  [35] Group
+      (no inputs)
+  [36] Surface  [geometry]
+      (no inputs)
+  [37] Group
+      (no inputs)
+  [38] Extrude
+      Base=[36] Surface  Direction=[40] Unit Z
+  [39] Group
+      (no inputs)
+  [40] Unit Z
+      Factor=1.0
+  [41] Group
+      (no inputs)
+  [42] List Item
+      (no inputs)
+  [43] Group
+      (no inputs)
+  [44] Distance
+      Point A=—  Point B=—
+  [45] Group
+      (no inputs)
+  [46] Cylinder
+      Base=[2] Point  Radius=[117] Division  Length=height of staircase
+  [47] Group
+      (no inputs)
+  [48] Divide Curve  [geometry]
+      Curve=[129] Interpolate  Count=number of poles in railing  Kinks=False
+  [49] Group
+      (no inputs)
+  [50] Cylinder
+      Base=[96] Move  Radius=0.5  Length=1.0
+  [51] Group
+      (no inputs)
+  [52] Group
+      (no inputs)
+  [53] Group
+      (no inputs)
+  [54] Group
+      (no inputs)
+  [55] Group
+      (no inputs)
+  [56] Division
+      A=height of staircase  B=degrees of staircase (how many rotations)
+  [57] Group
+      (no inputs)
+  [58] Multiplication
+      (no inputs)
+  [59] Group
+      (no inputs)
+  [60] Group
+      (no inputs)
+  [61] Group
+      (no inputs)
+  [62] Unit Z
+      Factor=1.0
+  [63] Group
+      (no inputs)
+  [64] Amplitude
+      Vector=[62] Unit Z  Amplitude=1.0
+  [65] Group
+      (no inputs)
+  [66] Move
+      Geometry=[119] Extend Curve  Motion=[64] Amplitude
+  [67] Group
+      (no inputs)
+  [68] Pipe
+      Curve=[66] Move  Radius=thickness of handrail  Caps=[125] Number
+  [69] Group
+      (no inputs)
+  [70] Multiplication
+      (no inputs)
+  [71] Group
+      (no inputs)
+  [72] Multiplication
+      (no inputs)
+  [73] Group
+      (no inputs)
+  [74] Division
+      A=[76] Pi  B=[78] Number
+  [75] Group
+      (no inputs)
+  [76] Pi
+      Factor=1.0
+  [77] Group
+      (no inputs)
+  [78] Number
+      (no inputs)
+  [79] Group
+      (no inputs)
+  [80] Division
+      A=—  B=number of poles in railing
+  [81] Group
+      (no inputs)
+  [82] Multiplication
+      (no inputs)
+  [83] Group
+      (no inputs)
+  [84] Number
+      (no inputs)
+  [85] Group
+      (no inputs)
+  [86] Group
+      (no inputs)
+  [87] Group
+      (no inputs)
+  [88] Group
+      (no inputs)
+  [89] Multiplication
+      (no inputs)
+  [90] Group
+      (no inputs)
+  [91] Unit Z
+      Factor=1.0
+  [92] Group
+      (no inputs)
+  [93] Amplitude
+      Vector=[91] Unit Z  Amplitude=poles cut into steps slightly
+  [94] Group
+      (no inputs)
+  [95] Group
+      (no inputs)
+  [96] Move
+      Geometry=[48] Divide Curve  Motion=[93] Amplitude
+  [97] Group
+      (no inputs)
+  [98] Group
+      (no inputs)
+  [99] Subtraction
+      (no inputs)
+  [100] Group
+      (no inputs)
+  [101] Group
+      (no inputs)
+  [102] Group
+      (no inputs)
+  [103] Cap Holes
+      Brep=[68] Pipe
+  [104] Group
+      (no inputs)
+  [105] Solid Union
+      Breps=[103] Cap Holes
+  [106] Group
+      (no inputs)
+  [107] Group
+      (no inputs)
+  [108] Cap Holes
+      Brep=[46] Cylinder
+  [109] Group
+      (no inputs)
+  [110] Group
+      (no inputs)
+  [111] Cap Holes
+      Brep=[50] Cylinder
+  [112] Group
+      (no inputs)
+  [113] Group
+      (no inputs)
+  [114] Group
+      (no inputs)
+  [115] Group
+      (no inputs)
+  [116] Group
+      (no inputs)
+  [117] Division
+      A=radius of staircase  B=thickness of central pole (lower = thicker)
+  [118] Group
+      (no inputs)
+  [119] Extend Curve  [geometry]
+      Curve=[18] Interpolate  Type=[121] Number  Start=[123] Number  End=[123] Number
+  [120] Group
+      (no inputs)
+  [121] Number
+      (no inputs)
+  [122] Group
+      (no inputs)
+  [123] Number
+      (no inputs)
+  [124] Group
+      (no inputs)
+  [125] Number
+      (no inputs)
+  [126] Group
+      (no inputs)
+  [127] Group
+      (no inputs)
+  [128] Point Cylindrical  [geometry]
+      Base plane=[2] Point  Angle=[3] Range  Radius=1.0  Elevation=[6] Range
+  [129] Interpolate
+      Vertices=[128] Point Cylindrical  Degree=3  Periodic=False  KnotStyle=1
+  [130] Group
+      (no inputs)
+  [131] Group
+      (no inputs)
+  [132] Subtraction
+      (no inputs)
+  [133] Group
+      (no inputs)
+  [134] Group
+      (no inputs)
+  [135] Group
+      (no inputs)
+  [136] Group
+      (no inputs)
+  [137] Group
+      (no inputs)
+  [138] Group
+      (no inputs)
+  [139] Group
+      (no inputs)
+  [140] Group
+      (no inputs)
+  [141] Solid Union
+      Breps=[108] Cap Holes
+  [142] Group
+      (no inputs)
+  [143] Group
+      (no inputs)
+  [144] Group
+      (no inputs)
+  [145] Custom Preview
+      Geometry=[141] Solid Union  Material=[147] Colour
+  [146] Group
+      (no inputs)
+  [147] Colour
+      (no inputs)
+  [148] Group
+      (no inputs)
+  [149] Group
+      (no inputs)
+  [150] Colour
+      (no inputs)
+  [151] Group
+      (no inputs)
+  [152] Custom Preview
+      Geometry=[105] Solid Union  Material=[150] Colour
+  [153] Group
+      (no inputs)
+  [154] Subtraction
+      (no inputs)
+  [155] Group
+      (no inputs)
+  [156] Number
+      (no inputs)
+  [157] Group
+      (no inputs)
+  [158] Multiplication
+      (no inputs)
+  [159] Group
+      (no inputs)
+
+Geometry / shapes:
+  [1] Point Cylindrical
+  [2] Point
+  [14] Line SDL
+  [25] Divide Curve
+  [27] XY Plane
+  [36] Surface
+  [48] Divide Curve
+  [119] Extend Curve
+  [128] Point Cylindrical
+
+Outputs (Panels):
+  (none)
+
+Components without a native Python mapping (emitted as gh(...) on decompile):
+  - Amplitude
+  - Bifocals
+  - Cap Holes
+  - Colour
+  - Construct Domain
+  - Custom Preview
+  - Cylinder
+  - Distance
+  - Divide Domain²
+  - Extend Curve
+  - Extrude
+  - Group
+  - Interpolate
+  - Isotrim
+  - Line SDL
+  - List Item
+  - Loft
+  - Move
+  - Number
+  - Pi
+  - Point
+  - Point Cylindrical
+  - Project
+  - Range
+  - Surface
+  - XY Plane
