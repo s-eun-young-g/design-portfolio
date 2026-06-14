@@ -1,11 +1,13 @@
 # Computational design — definitions as code
 
-Parametric design studies in Rhino + Grasshopper, presented as **code, not binary
-`.gh` files**. Each definition is run through my own
+Parametric things I built in Rhino + Grasshopper (mostly for MIT's 4.500 + design
+classes) — but shown as **code, not binary `.gh` blobs you can't read or diff**.
+Each definition gets run through my own
 [**pythongrasshopperinterp**](https://github.com/s-eun-young-g/pythongrasshopperinterp)
-translator, which reads a Grasshopper definition and prints both the *parametric
-system* (its driving inputs and the component pipeline) and a best-effort Python
-transcription. Every study is paired with a render of the output.
+translator, which cracks open the Grasshopper file and prints both the *parametric
+system* (the sliders + the component pipeline) and a best-effort Python
+transcription. Every study comes with a render so you can see what it actually
+makes. 🌱
 
 <p>
   <img src="truss/truss2d.png" width="220" alt="truss canopy">
@@ -23,3 +25,9 @@ transcription. Every study is paired with a render of the output.
 
 Each folder holds the render, a `.describe.txt` (the parametric system read off the
 definition), a `.py` (Python transcription), and the source `.ghx`.
+
+> **status / honesty note:** the renders are real Rhino outputs and the
+> `.describe.txt` inventories are reliable. The `.py` transcriptions are
+> *best-effort* — my translator maps a bunch of components to clean Python and
+> flags the rest as `gh("…")`. It's a work in progress, which is honestly half the
+> fun. Want the real thing? the `.ghx` files open straight in Grasshopper.
